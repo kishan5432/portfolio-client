@@ -1,0 +1,118 @@
+{
+  "data": [
+    {
+      "_id": "cert_1",
+      "title": "AWS Certified Solutions Architect - Associate",
+      "issuer": "Amazon Web Services",
+      "issueDate": "2024-02-15T00:00:00.000Z",
+      "expiryDate": "2027-02-15T00:00:00.000Z",
+      "image": {
+        "publicId": "certificates/aws-saa",
+        "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "width": 800,
+        "height": 600,
+        "format": "jpg"
+      },
+      "pdfUrl": "https://example.com/certificates/aws-saa.pdf",
+      "category": "Cloud Computing",
+      "credentialId": "AWS-SAA-12345678",
+      "credentialUrl": "https://www.credly.com/badges/aws-saa-12345678",
+      "verificationUrl": "https://aws.amazon.com/verification/aws-saa-12345678",
+      "skills": ["AWS", "Cloud Architecture", "EC2", "S3", "Lambda", "RDS"],
+      "description": "Validates expertise in designing distributed systems on Amazon Web Services. Covers compute, networking, storage, and database AWS services as well as AWS deployment and management services.",
+      "issuedBy": {
+        "name": "Amazon Web Services",
+        "url": "https://aws.amazon.com",
+        "logo": {
+          "publicId": "logos/aws",
+          "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "width": 200,
+          "height": 200,
+          "format": "png"
+        }
+      },
+      "verified": true,
+      "order": 1,
+      "createdAt": "2024-02-15T00:00:00.000Z",
+      "updatedAt": "2024-02-15T00:00:00.000Z"
+    },
+    {
+      "_id": "cert_2",
+      "title": "React Developer Professional Certificate",
+      "issuer": "Meta",
+      "issueDate": "2023-11-20T00:00:00.000Z",
+      "image": {
+        "publicId": "certificates/meta-react",
+        "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "width": 800,
+        "height": 600,
+        "format": "jpg"
+      },
+      "pdfUrl": "https://example.com/certificates/meta-react.pdf",
+      "category": "Frontend Development",
+      "credentialId": "META-REACT-87654321",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/certificate/meta-react-87654321",
+      "skills": ["React", "JavaScript", "JSX", "Hooks", "State Management", "Testing"],
+      "description": "Professional certificate program covering advanced React concepts, including hooks, context, testing, and best practices for building scalable React applications.",
+      "issuedBy": {
+        "name": "Meta",
+        "url": "https://about.meta.com",
+        "logo": {
+          "publicId": "logos/meta",
+          "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "width": 200,
+          "height": 200,
+          "format": "png"
+        }
+      },
+      "verified": true,
+      "order": 2,
+      "createdAt": "2023-11-20T00:00:00.000Z",
+      "updatedAt": "2023-11-20T00:00:00.000Z"
+    },
+    {
+      "_id": "cert_3",
+      "title": "Google Cloud Professional Cloud Architect",
+      "issuer": "Google Cloud",
+      "issueDate": "2024-06-10T00:00:00.000Z",
+      "expiryDate": "2026-06-10T00:00:00.000Z",
+      "image": {
+        "publicId": "certificates/gcp-architect",
+        "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "width": 800,
+        "height": 600,
+        "format": "jpg"
+      },
+      "pdfUrl": "https://example.com/certificates/gcp-architect.pdf",
+      "category": "Cloud Computing",
+      "credentialId": "GCP-ARCH-11223344",
+      "credentialUrl": "https://www.credential.net/gcp-arch-11223344",
+      "verificationUrl": "https://cloud.google.com/certification/verification/gcp-arch-11223344",
+      "skills": ["Google Cloud Platform", "Kubernetes", "Terraform", "Cloud Architecture", "DevOps"],
+      "description": "Validates ability to design, develop, and manage robust, secure, scalable, highly available, and dynamic solutions to drive business objectives using Google Cloud technologies.",
+      "issuedBy": {
+        "name": "Google Cloud",
+        "url": "https://cloud.google.com",
+        "logo": {
+          "publicId": "logos/gcp",
+          "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "width": 200,
+          "height": 200,
+          "format": "png"
+        }
+      },
+      "verified": true,
+      "order": 3,
+      "createdAt": "2024-06-10T00:00:00.000Z",
+      "updatedAt": "2024-06-10T00:00:00.000Z"
+    }
+  ],
+  "success": true,
+  "message": "Certificates retrieved successfully"
+}

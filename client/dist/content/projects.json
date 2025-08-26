@@ -1,0 +1,182 @@
+{
+  "data": [
+    {
+      "_id": "proj_1",
+      "title": "E-Commerce Platform",
+      "description": "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product catalog, shopping cart, payment integration with Stripe, and an admin dashboard for inventory management.",
+      "shortDescription": "Full-stack e-commerce platform with React and Node.js",
+      "techStack": ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Stripe", "Tailwind CSS"],
+      "images": [
+        {
+          "publicId": "ecommerce/homepage",
+          "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "width": 1200,
+          "height": 800,
+          "format": "jpg"
+        }
+      ],
+      "thumbnail": {
+        "publicId": "ecommerce/thumbnail",
+        "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "width": 400,
+        "height": 300,
+        "format": "jpg"
+      },
+      "liveUrl": "https://ecommerce-demo.vercel.app",
+      "githubUrl": "https://github.com/username/ecommerce-platform",
+      "tags": ["Full Stack", "E-commerce", "Payment Integration"],
+      "category": "web",
+      "status": "completed",
+      "featured": true,
+      "priority": 1,
+      "startDate": "2024-01-15T00:00:00.000Z",
+      "endDate": "2024-03-20T00:00:00.000Z",
+      "teamSize": 2,
+      "myRole": "Full Stack Developer",
+      "challenges": [
+        "Implementing secure payment processing",
+        "Optimizing database queries for large product catalogs",
+        "Building responsive admin dashboard"
+      ],
+      "learnings": [
+        "Advanced React patterns and state management",
+        "Payment gateway integration best practices",
+        "Database optimization techniques"
+      ],
+      "metrics": [
+        {
+          "label": "Page Load Time",
+          "value": "< 2s"
+        },
+        {
+          "label": "Products Supported",
+          "value": "10,000+"
+        }
+      ],
+      "order": 1,
+      "createdAt": "2024-01-15T00:00:00.000Z",
+      "updatedAt": "2024-03-20T00:00:00.000Z"
+    },
+    {
+      "_id": "proj_2",
+      "title": "Task Management App",
+      "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, team collaboration features, and advanced filtering. Built with React, Socket.io, and PostgreSQL.",
+      "shortDescription": "Collaborative task management with real-time updates",
+      "techStack": ["React", "TypeScript", "Socket.io", "PostgreSQL", "Express", "React DnD"],
+      "images": [
+        {
+          "publicId": "taskapp/dashboard",
+          "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "width": 1200,
+          "height": 800,
+          "format": "jpg"
+        }
+      ],
+      "thumbnail": {
+        "publicId": "taskapp/thumbnail",
+        "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "width": 400,
+        "height": 300,
+        "format": "jpg"
+      },
+      "liveUrl": "https://taskmanager-demo.netlify.app",
+      "githubUrl": "https://github.com/username/task-manager",
+      "tags": ["Real-time", "Collaboration", "Productivity"],
+      "category": "web",
+      "status": "completed",
+      "featured": true,
+      "priority": 2,
+      "startDate": "2023-09-01T00:00:00.000Z",
+      "endDate": "2023-11-15T00:00:00.000Z",
+      "teamSize": 1,
+      "myRole": "Full Stack Developer",
+      "challenges": [
+        "Implementing real-time synchronization",
+        "Complex drag-and-drop interactions",
+        "Performance optimization for large datasets"
+      ],
+      "learnings": [
+        "WebSocket implementation and optimization",
+        "Advanced React DnD patterns",
+        "PostgreSQL performance tuning"
+      ],
+      "metrics": [
+        {
+          "label": "Real-time Latency",
+          "value": "< 100ms"
+        },
+        {
+          "label": "Concurrent Users",
+          "value": "500+"
+        }
+      ],
+      "order": 2,
+      "createdAt": "2023-09-01T00:00:00.000Z",
+      "updatedAt": "2023-11-15T00:00:00.000Z"
+    },
+    {
+      "_id": "proj_3",
+      "title": "Weather Dashboard",
+      "description": "A responsive weather dashboard that displays current weather conditions, 7-day forecasts, and historical data. Features interactive maps, weather alerts, and location-based recommendations.",
+      "shortDescription": "Interactive weather dashboard with forecasts and maps",
+      "techStack": ["React", "TypeScript", "OpenWeatherMap API", "Mapbox", "Chart.js"],
+      "images": [
+        {
+          "publicId": "weather/dashboard",
+          "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+          "width": 1200,
+          "height": 800,
+          "format": "jpg"
+        }
+      ],
+      "thumbnail": {
+        "publicId": "weather/thumbnail",
+        "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "width": 400,
+        "height": 300,
+        "format": "jpg"
+      },
+      "liveUrl": "https://weather-dashboard-demo.vercel.app",
+      "githubUrl": "https://github.com/username/weather-dashboard",
+      "tags": ["API Integration", "Data Visualization", "Maps"],
+      "category": "web",
+      "status": "in-progress",
+      "featured": false,
+      "priority": 3,
+      "startDate": "2024-04-01T00:00:00.000Z",
+      "teamSize": 1,
+      "myRole": "Frontend Developer",
+      "challenges": [
+        "Handling multiple API data sources",
+        "Creating smooth map interactions",
+        "Optimizing data refresh rates"
+      ],
+      "learnings": [
+        "Advanced API integration patterns",
+        "Interactive map development",
+        "Data caching strategies"
+      ],
+      "metrics": [
+        {
+          "label": "API Response Time",
+          "value": "< 500ms"
+        },
+        {
+          "label": "Data Accuracy",
+          "value": "99.5%"
+        }
+      ],
+      "order": 3,
+      "createdAt": "2024-04-01T00:00:00.000Z",
+      "updatedAt": "2024-08-20T00:00:00.000Z"
+    }
+  ],
+  "success": true,
+  "message": "Projects retrieved successfully"
+}

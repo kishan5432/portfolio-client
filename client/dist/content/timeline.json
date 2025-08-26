@@ -1,0 +1,97 @@
+{
+  "data": [
+    {
+      "_id": "timeline_1",
+      "title": "Senior Full Stack Developer",
+      "description": "Lead developer responsible for architecting and implementing scalable web applications using React, Node.js, and cloud technologies. Managed a team of 4 developers and collaborated with product managers to deliver high-quality solutions.",
+      "date": "2023-01-15T00:00:00.000Z",
+      "endDate": "2024-08-20T00:00:00.000Z",
+      "type": "experience",
+      "icon": "💼",
+      "company": "TechCorp Solutions",
+      "location": "San Francisco, CA (Remote)",
+      "skills": ["React", "Node.js", "TypeScript", "AWS", "Team Leadership", "Agile"],
+      "achievements": [
+        "Increased application performance by 40% through optimization strategies",
+        "Led successful migration of legacy systems to modern tech stack",
+        "Mentored 6 junior developers and improved team productivity by 25%",
+        "Implemented CI/CD pipelines reducing deployment time by 60%"
+      ],
+      "url": "https://techcorp.com",
+      "image": {
+        "publicId": "timeline/techcorp",
+        "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "width": 400,
+        "height": 300,
+        "format": "jpg"
+      },
+      "ongoing": false,
+      "order": 1,
+      "createdAt": "2023-01-15T00:00:00.000Z",
+      "updatedAt": "2024-08-20T00:00:00.000Z"
+    },
+    {
+      "_id": "timeline_2",
+      "title": "Master of Science in Computer Science",
+      "description": "Specialized in Software Engineering and Machine Learning. Completed thesis on 'Optimizing React Application Performance through Advanced Rendering Techniques'. Graduated Magna Cum Laude with GPA 3.8/4.0.",
+      "date": "2021-09-01T00:00:00.000Z",
+      "endDate": "2022-12-15T00:00:00.000Z",
+      "type": "education",
+      "icon": "🎓",
+      "company": "Stanford University",
+      "location": "Stanford, CA",
+      "skills": ["Computer Science", "Software Engineering", "Machine Learning", "Research", "Data Structures"],
+      "achievements": [
+        "Magna Cum Laude graduate with 3.8/4.0 GPA",
+        "Published research paper on React performance optimization",
+        "Teaching Assistant for Advanced Web Development course",
+        "Winner of Best Student Project Award for thesis work"
+      ],
+      "url": "https://stanford.edu",
+      "image": {
+        "publicId": "timeline/stanford",
+        "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "width": 400,
+        "height": 300,
+        "format": "jpg"
+      },
+      "ongoing": false,
+      "order": 2,
+      "createdAt": "2021-09-01T00:00:00.000Z",
+      "updatedAt": "2022-12-15T00:00:00.000Z"
+    },
+    {
+      "_id": "timeline_3",
+      "title": "Open Source Contributor",
+      "description": "Active contributor to various open source projects including React ecosystem libraries, developer tools, and educational resources. Maintained several NPM packages with over 10k weekly downloads.",
+      "date": "2020-03-01T00:00:00.000Z",
+      "type": "achievement",
+      "icon": "🌟",
+      "location": "Global (Remote)",
+      "skills": ["Open Source", "JavaScript", "TypeScript", "React", "Node.js", "Community Building"],
+      "achievements": [
+        "Contributed to 50+ open source repositories",
+        "Maintained 3 NPM packages with 10k+ weekly downloads",
+        "Spoke at 5 tech conferences about open source development",
+        "Mentored 20+ new contributors through GitHub and Discord"
+      ],
+      "url": "https://github.com/username",
+      "image": {
+        "publicId": "timeline/opensource",
+        "url": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "secureUrl": "https://res.cloudinary.com/demo/image/upload/sample.jpg",
+        "width": 400,
+        "height": 300,
+        "format": "jpg"
+      },
+      "ongoing": true,
+      "order": 3,
+      "createdAt": "2020-03-01T00:00:00.000Z",
+      "updatedAt": "2024-08-20T00:00:00.000Z"
+    }
+  ],
+  "success": true,
+  "message": "Timeline items retrieved successfully"
+}
