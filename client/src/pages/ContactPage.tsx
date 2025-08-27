@@ -168,10 +168,11 @@ export function ContactPage() {
 
   // Test server connectivity on component mount
   useEffect(() => {
+    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1';
     const testServerConnection = async () => {
       try {
         console.log('🧪 Testing server connection...');
-        const response = await fetch('http://localhost:5000/api/v1/contact', {
+        const response = await fetch(`${apiBase}/contact`, {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' }
         });
@@ -202,6 +203,7 @@ export function ContactPage() {
 
   // Simplified form submission without validation
   const onSubmit = async (data: ContactFormData) => {
+    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1';
     console.log('=== CONTACT FORM SUBMISSION START ===');
     console.log('Form data:', data);
     console.log('Form data type:', typeof data);
@@ -214,7 +216,7 @@ export function ContactPage() {
       console.log('🧪 Submitting contact form directly to server...');
 
       // Use direct fetch instead of React Query to eliminate potential issues
-      const response = await fetch('http://localhost:5000/api/v1/contact', {
+      const response = await fetch(`${apiBase}/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -15,7 +15,8 @@ export function DebugPage() {
     const testAPI = async () => {
       try {
         console.log('🔍 Testing direct API call...');
-        const response = await fetch('http://localhost:5000/api/v1/projects');
+        const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1';
+        const response = await fetch(`${apiBase}/projects`);
         console.log('📡 API Response status:', response.status);
         console.log('📡 API Response ok:', response.ok);
 

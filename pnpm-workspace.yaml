@@ -1,0 +1,7 @@
+packages:
+  - client
+  - packages/*
+  - ../portfolio-server/server
+  - ../portfolio-server/packages/*
+
+

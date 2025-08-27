@@ -496,7 +496,10 @@ export const buildCloudinaryUrl = (imageData: string, transformations?: string):
   }
 
   // If it's a Cloudinary public_id, build the URL with transformations
-  const baseUrl = 'https://res.cloudinary.com/dse13zdp7/image/upload';
+  const cloudName = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_CLOUDINARY_CLOUD_NAME)
+    ? import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
+    : 'dse13zdp7';
+  const baseUrl = `https://res.cloudinary.com/${cloudName}/image/upload`;
   const transforms = transformations || 'w_400,h_300,c_fill,f_auto,q_auto';
 
   return `${baseUrl}/${transforms}/${imageData}`;
