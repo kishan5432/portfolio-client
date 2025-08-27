@@ -479,7 +479,12 @@ class ApiClient {
   }
 }
 
-export const apiClient = new ApiClient();
+// Prefer runtime-configured API URL via Vite env, fallback to localhost default
+const configuredApiBaseUrl = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL)
+  ? import.meta.env.VITE_API_URL
+  : undefined;
+
+export const apiClient = new ApiClient(configuredApiBaseUrl);
 
 // Cloudinary URL builder
 export const buildCloudinaryUrl = (imageData: string, transformations?: string): string => {

@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -23,14 +23,12 @@
       "@/stores/*": ["./src/stores/*"],
       "@/types/*": ["./src/types/*"],
       "@/utils/*": ["./src/utils/*"],
-      "@portfolio/types": ["../../packages/shared-types/src"],
-      "@portfolio/types/*": ["../../packages/shared-types/src/*"]
+      "@portfolio/types": ["../packages/shared-types/src"],
+      "@portfolio/types/*": ["../packages/shared-types/src/*"]
     }
   },
   "include": ["src"],
   "references": [
-    {
-      "path": "../../packages/shared-types"
-    }
+    { "path": "../packages/shared-types" }
   ]
 }
