@@ -123,14 +123,15 @@ export function Navbar() {
               </div>
 
               {/* Admin Link */}
-              <MagneticButton
-                variant="outline"
-                size="sm"
-                onClick={() => window.location.href = '/admin'}
-                className="select-none"
-              >
-                Admin
-              </MagneticButton>
+              <Link to="/admin">
+                <MagneticButton
+                  variant="outline"
+                  size="sm"
+                  className="select-none"
+                >
+                  Admin
+                </MagneticButton>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
