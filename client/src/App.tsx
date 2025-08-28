@@ -30,6 +30,7 @@ const queryClient = new QueryClient({
 
 function App() {
   const location = useLocation();
+  // Ensure admin route detection works consistently across all screen sizes
   const isAdminRoute = location.pathname.startsWith('/admin');
 
   return (
@@ -41,7 +42,7 @@ function App() {
 
           {isAdminRoute ? (
             // Admin routes don't use the main layout
-            <Routes>
+            <Routes location={location} key={location.pathname}>
               <Route path="/admin/*" element={<AdminRoutes />} />
             </Routes>
           ) : (
