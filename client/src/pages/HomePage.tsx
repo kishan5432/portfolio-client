@@ -540,72 +540,7 @@ export function HomePage() {
         </Container>
       </section>
 
-      {/* Resume Section */}
-      <section className="py-20 bg-gradient-to-br from-background via-muted/20 to-background" aria-labelledby="resume-heading">
-        <Container>
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 id="resume-heading" className="text-3xl font-bold text-foreground mb-4">Professional Resume</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Download my comprehensive resume to learn more about my experience, skills, and achievements
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="max-w-2xl mx-auto text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-card rounded-2xl p-8 shadow-lg border border-border/50 mb-8">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-                <DocumentArrowDownIcon className="w-10 h-10 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-3">Kishan Kumar - Full Stack Developer</h3>
-              <p className="text-muted-foreground mb-6">
-                Experienced developer with expertise in MERN stack, modern web technologies, and building scalable applications.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">React.js</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">Node.js</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">MongoDB</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">TypeScript</span>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">Tailwind CSS</span>
-              </div>
-              <Button
-                size="lg"
-                className="group w-full sm:w-auto"
-                onClick={() => {
-                  // You can replace this URL with your actual resume file
-                  const resumeUrl = '/resume.pdf'; // or your Cloudinary URL
-                  const link = document.createElement('a');
-                  link.href = resumeUrl;
-                  link.download = 'Kishan_Kumar_Resume.pdf';
-                  link.target = '_blank';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
-              >
-                <DocumentArrowDownIcon className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                Download Resume (PDF)
-              </Button>
-            </div>
-
-            <p className="text-sm text-muted-foreground">
-              💡 <strong>Pro tip:</strong> You can also view my detailed experience and skills on the{' '}
-              <Link to="/timeline" className="text-primary hover:underline">Timeline</Link> and{' '}
-              <Link to="/about" className="text-primary hover:underline">About</Link> pages
-            </p>
-          </motion.div>
-        </Container>
-      </section>
+      
 
       {/* Featured Projects Carousel */}
       <section className="py-20" aria-labelledby="projects-heading">
@@ -825,6 +760,73 @@ export function HomePage() {
               </Button>
             </div>
           </div>
+        </Container>
+      </section>
+
+      {/* Resume Section */}
+      <section className="py-20 bg-gradient-to-br from-background via-muted/20 to-background" aria-labelledby="resume-heading">
+        <Container>
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 id="resume-heading" className="text-3xl font-bold text-foreground mb-4">Professional Resume</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Download my comprehensive resume to learn more about my experience, skills, and achievements
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="max-w-2xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="bg-card rounded-2xl p-8 shadow-lg border border-border/50 mb-8">
+              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+                <DocumentArrowDownIcon className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">Kishan Kumar - Full Stack Developer</h3>
+              <p className="text-muted-foreground mb-6">
+                Experienced developer with expertise in MERN stack, modern web technologies, and building scalable applications.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4 mb-6">
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">React.js</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">Node.js</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">MongoDB</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">TypeScript</span>
+                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm">Tailwind CSS</span>
+              </div>
+              <Button
+                size="lg"
+                className="group w-full sm:w-auto"
+                onClick={() => {
+                  // You can replace this URL with your actual resume file
+                  const resumeUrl = '/resume.pdf'; // or your Cloudinary URL
+                  const link = document.createElement('a');
+                  link.href = resumeUrl;
+                  link.download = 'Kishan_Kumar_Resume.pdf';
+                  link.target = '_blank';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+              >
+                <DocumentArrowDownIcon className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                Download Resume (PDF)
+              </Button>
+            </div>
+
+            <p className="text-sm text-muted-foreground">
+              💡 <strong>Pro tip:</strong> You can also view my detailed experience and skills on the{' '}
+              <Link to="/timeline" className="text-primary hover:underline">Timeline</Link> and{' '}
+              <Link to="/about" className="text-primary hover:underline">About</Link> pages
+            </p>
+          </motion.div>
         </Container>
       </section>
     </div>
