@@ -5,7 +5,7 @@ import { ThemeToggle, PaletteSelector } from '@/components/providers/ThemeProvid
 import { ReducedMotionToggle } from '@/components/providers/ReducedMotionProvider';
 import { Magnetic, MagneticButton } from '@/components/ui/Magnetic';
 import { useBackground } from '@/contexts/BackgroundContext';
-import { BackgroundSelector } from '@/components/ui/BackgroundSelector';
+import { BackgroundSelector, MobileBackgroundSelector } from '@/components/ui/BackgroundSelector';
 import { navVariants, mobileMenuVariants } from '@/lib/motion/variants';
 
 const navigation = [
@@ -22,10 +22,6 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { backgroundType, setBackgroundType } = useBackground();
-
-  // Scroll progress
-  const { scrollYProgress } = useScroll();
-  const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   // Handle scroll state
   useEffect(() => {
@@ -62,9 +58,6 @@ export function Navbar() {
           ? 'bg-background/90 backdrop-blur-lg border-b border-border/50 shadow-lg shadow-black/5'
           : 'bg-background/5 backdrop-blur-sm'
           }`}
-        variants={navVariants}
-        initial="hidden"
-        animate="visible"
       >
         <nav id="navigation" className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 relative">
@@ -134,24 +127,35 @@ export function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
+            {/* Mobile Controls and Menu Button */}
+            <div className="md:hidden flex items-center gap-1">
+              {/* Theme Controls */}
+              <div className="flex items-center gap-0.5 px-1 py-0.5 rounded-lg bg-muted/30 border border-border/50">
+                <MobileBackgroundSelector 
+                  currentType={backgroundType}
+                  onTypeChange={setBackgroundType}
+                />
+                <PaletteSelector size="xs" />
+                <ThemeToggle size="xs" />
+              </div>
+              
+              {/* Mobile Menu Button */}
               <Magnetic strength={0.15}>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="p-2.5 rounded-lg text-foreground/70 hover:text-accent hover:bg-muted/50 transition-all duration-200 border border-transparent hover:border-border/50"
+                  className="p-1.5 rounded-lg text-foreground/70 hover:text-accent hover:bg-muted/50 transition-all duration-200 border border-transparent hover:border-border/50"
                   aria-label="Toggle menu"
                   aria-expanded={isOpen}
                 >
                   <motion.div
                     animate={isOpen ? 'open' : 'closed'}
-                    className="w-6 h-6 flex flex-col justify-center space-y-1"
+                    className="w-4 h-4 flex flex-col justify-center space-y-0.5"
                   >
                     <motion.span
                       className="block w-full h-0.5 bg-current rounded-full"
                       variants={{
                         closed: { rotate: 0, y: 0, width: '100%' },
-                        open: { rotate: 45, y: 6, width: '100%' },
+                        open: { rotate: 45, y: 4, width: '100%' },
                       }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                     />
@@ -167,7 +171,7 @@ export function Navbar() {
                       className="block w-full h-0.5 bg-current rounded-full"
                       variants={{
                         closed: { rotate: 0, y: 0, width: '100%' },
-                        open: { rotate: -45, y: -6, width: '100%' },
+                        open: { rotate: -45, y: -4, width: '100%' },
                       }}
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                     />
@@ -177,12 +181,6 @@ export function Navbar() {
             </div>
           </div>
         </nav>
-
-        {/* Scroll Progress Bar */}
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent origin-left"
-          style={{ scaleX }}
-        />
       </motion.header>
 
       {/* Mobile Menu with AnimatePresence */}
@@ -246,26 +244,6 @@ export function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <div className="flex items-center justify-between px-4">
-                    <span className="text-sm font-medium">Background</span>
-                    <BackgroundSelector
-                      currentType={backgroundType}
-                      onTypeChange={setBackgroundType}
-                    />
-                  </div>
-
-                  <div className="flex items-center justify-between px-4">
-                    <span className="text-sm font-medium">Theme</span>
-                    <div className="flex items-center gap-3">
-                      <PaletteSelector />
-                      <ThemeToggle />
-                    </div>
-                  </div>
-
-                  <div className="px-4">
-                    <ReducedMotionToggle />
-                  </div>
-
                   <div className="px-4">
                     <Link
                       to="/admin"

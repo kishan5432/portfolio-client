@@ -39,9 +39,9 @@ interface BackgroundProviderProps {
 
 export function BackgroundProvider({ children }: BackgroundProviderProps) {
   const [backgroundType, setBackgroundTypeState] = useState<BackgroundType>(() => {
-    if (typeof window === 'undefined') return 'grid';
+    if (typeof window === 'undefined') return 'none';
     const saved = localStorage.getItem('background-preference') as BackgroundType;
-    return saved || 'grid';
+    return saved || 'none';
   });
 
   const [isAutoCycling, setIsAutoCyclingState] = useState<boolean>(() => {
