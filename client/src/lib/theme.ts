@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 // Theme types
-export type ThemeMode = 'light' | 'dark' | 'system';
+export type ThemeMode = 'light' | 'dark';
 export type AccentPalette = 'indigo' | 'teal' | 'amber';
 
 // Accent color palettes
@@ -154,7 +154,7 @@ export function getReducedMotion(): boolean {
 
 export function applyTheme(mode: ThemeMode, palette: AccentPalette): void {
   const root = document.documentElement;
-  const actualMode = mode === 'system' ? getSystemTheme() : mode;
+  const actualMode = mode;
 
   // Apply base colors
   const baseTheme = baseColors[actualMode];
@@ -199,7 +199,7 @@ interface ThemeStore {
 export const useThemeStore = create<ThemeStore>()(
   persist(
     (set, get) => ({
-      mode: 'system',
+      mode: 'dark',
       palette: 'indigo',
       setMode: (mode) => {
         set({ mode });
@@ -211,7 +211,7 @@ export const useThemeStore = create<ThemeStore>()(
       },
       toggleMode: () => {
         const { mode } = get();
-        const newMode = mode === 'light' ? 'dark' : mode === 'dark' ? 'system' : 'light';
+        const newMode = mode === 'light' ? 'dark' : 'light';
         get().setMode(newMode);
       },
     }),
@@ -219,7 +219,15 @@ export const useThemeStore = create<ThemeStore>()(
       name: 'portfolio-theme',
       onRehydrate: (state) => {
         if (state) {
-          applyTheme(state.mode, state.palette);
+          const safeMode = state.mode === 'dark' ? 'dark' : 'light';
+          // If an old value like 'system' was stored, coerce to dark by default
+          if (state.mode !== 'light' && state.mode !== 'dark') {
+            try {
+              // best-effort update persisted mode
+              (state as any).mode = 'dark';
+            } catch { }
+          }
+          applyTheme(safeMode as ThemeMode, state.palette);
         }
       },
     }
@@ -229,8 +237,7 @@ export const useThemeStore = create<ThemeStore>()(
 // React hook for theme
 export function useTheme() {
   const { mode, palette, setMode, setPalette, toggleMode } = useThemeStore();
-
-  const actualMode = mode === 'system' ? getSystemTheme() : mode;
+  const actualMode = mode;
   const isDark = actualMode === 'dark';
 
   return {

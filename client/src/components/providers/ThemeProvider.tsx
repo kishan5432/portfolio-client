@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { useThemeStore, applyTheme, getSystemTheme, type ThemeMode, type AccentPalette } from '@/lib/theme';
+import { useThemeStore, applyTheme, type ThemeMode, type AccentPalette } from '@/lib/theme';
 
 interface ThemeContextType {
   mode: ThemeMode;
@@ -18,14 +18,12 @@ interface ThemeProviderProps {
   children: React.ReactNode;
   defaultMode?: ThemeMode;
   defaultPalette?: AccentPalette;
-  enableSystem?: boolean;
 }
 
 export function ThemeProvider({
   children,
   defaultMode = 'dark',
   defaultPalette = 'teal',
-  enableSystem = true,
 }: ThemeProviderProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const { mode, palette, setMode, setPalette, toggleMode } = useThemeStore();
@@ -45,20 +43,6 @@ export function ThemeProvider({
     setIsLoaded(true);
   }, []);
 
-  // Listen for system theme changes
-  useEffect(() => {
-    if (!enableSystem || mode !== 'system') return;
-
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-    const handleChange = () => {
-      applyTheme('system', palette);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [mode, palette, enableSystem]);
-
   // Listen for reduced motion changes
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -75,7 +59,7 @@ export function ThemeProvider({
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  const actualMode = mode === 'system' ? getSystemTheme() : mode;
+  const actualMode = mode;
   const isDark = actualMode === 'dark';
 
   const value: ThemeContextType = {
@@ -138,6 +122,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
           </svg>
         );
       case 'dark':
+      default:
         return (
           <svg
             className="w-4 h-4"
@@ -148,19 +133,6 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
         );
-      case 'system':
-        return (
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-            <line x1="8" y1="21" x2="16" y2="21" />
-            <line x1="12" y1="17" x2="12" y2="21" />
-          </svg>
-        );
     }
   };
 
@@ -169,8 +141,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       case 'light':
         return 'Switch to dark mode';
       case 'dark':
-        return 'Switch to system mode';
-      case 'system':
+      default:
         return 'Switch to light mode';
     }
   };
